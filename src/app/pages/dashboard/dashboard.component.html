@@ -3,6 +3,7 @@
     <ul>
         <li *ngFor = "let note of notes">
             <a [routerLink]="['/note', note.id]">{{note.title}}</a>
+            <button (click)="editNote(note.id)">Edit</button>
             <button (click)="deleteNote(note.id)">Delete</button>
         </li>
     </ul>

@@ -22,7 +22,11 @@ export class NoteService {
     return this.http.post<any>(this.apiUrl, note);
   }
 
+  updateNote(id:number, note: any): Observable<any>{
+    return this.http.put<any>(`${this.apiUrl}/${id}`, note);
+  }
+
   deleteNote(id: number): Observable<any>{
-    return this.http.delete<any>(`${this.apiUrl}?id=${id}`);
+    return this.http.delete<any>(`${this.apiUrl}/${id}`);
   }
 }

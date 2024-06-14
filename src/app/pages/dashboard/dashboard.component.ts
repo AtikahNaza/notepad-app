@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NoteService } from '../../services/note.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,7 +10,7 @@ import { NoteService } from '../../services/note.service';
 export class DashboardComponent {
   notes: any[] = [];
 
-  constructor(private noteService: NoteService){}
+  constructor(private noteService: NoteService, private router: Router){}
 
   ngOnInit(): void{
     this.loadNotes();
@@ -25,5 +26,9 @@ export class DashboardComponent {
     this.noteService.deleteNote(id).subscribe(() =>{
       this.loadNotes();
     })
+  }
+
+  editNote(id: number){
+    this.router.navigate(['/notepad-form', {id}]);
   }
 }

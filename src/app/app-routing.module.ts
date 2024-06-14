@@ -7,6 +7,7 @@ import { NoteDetailComponent } from './pages/note-detail/note-detail.component';
 const routes: Routes = [
   {path: '', redirectTo:'/dashboard', pathMatch: 'full'},
   {path: 'notepad-form', component: NotepadFormComponent},
+  {path: 'notepad-form/:id', component: NotepadFormComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'note/:id', component: NoteDetailComponent}
 ];
