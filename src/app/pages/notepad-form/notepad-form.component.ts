@@ -40,8 +40,9 @@ export class NotepadFormComponent implements OnInit {
         this.router.navigate(['/dashboard']);
       })
     }else{
+      let idNumber = Math.floor(Math.random() * 1000)
       const newNote = {
-        id: Math.floor(Math.random() * 1000),
+        id: idNumber.toString(),
         title: this.title,
         description: this.description
       };
